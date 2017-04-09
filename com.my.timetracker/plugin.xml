@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated timetracker -->
+      <package
+            uri="http://my.com/timetracker"
+            class="com.my.timetracker.timetracker.TimetrackerPackage"
+            genModel="model/timetracker.genmodel"/>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.eclipse.e4.ui.workbench.swt.E4Application"
+            name="com.my.timetracker">
+      </product>
+   </extension>
+
+</plugin>
