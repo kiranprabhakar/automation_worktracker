@@ -11,7 +11,7 @@ import org.apache.poi.xssf.usermodel.*;
 
 public class DataWriter {
 	    SimpleDateFormat dateFormat = 
-	    	      new SimpleDateFormat ("dd/MM/yyyy");
+	    	      new SimpleDateFormat ("MM/dd/yyyy");
 	    SimpleDateFormat timeFormat = 
 	    	      new SimpleDateFormat ("hh:mm:ss a");
 	public boolean writeToFile(User user, String path){
