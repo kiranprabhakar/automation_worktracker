@@ -15,6 +15,10 @@
       <product
             application="org.eclipse.e4.ui.workbench.swt.E4Application"
             name="com.my.timetracker">
+         <property
+               name="appName"
+               value="com.my.timetracker">
+         </property>
       </product>
    </extension>
 
