@@ -1,6 +1,7 @@
 package com.my.timetracker.parts;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -21,6 +22,7 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Text;
 
+import com.my.timetracker.timetracker.Task;
 import com.my.timetracker.timetracker.TimetrackerFactory;
 import com.my.timetracker.timetracker.User;
 import com.my.timetracker.writers.DataWriter;
@@ -35,6 +37,7 @@ public class TaskMainPart {
 	private List<String> data = new ArrayList<String>();
 	private DataWriter writer = new DataWriter();
 	private User user = TimetrackerFactory.eINSTANCE.createUser();
+	private Calendar currTaskStartTime ;
 
 	public TaskMainPart() {
 		// data.add("Sample item 1");
@@ -101,11 +104,13 @@ public class TaskMainPart {
 			public void handleEvent(Event e) {
 				switch (e.type) {
 				case SWT.Selection:
-					// System.out.println("Button pressed");
+					// System.out.println("Start Button pressed");
 					if(validateStart()){
 						// TODO: store time
 						// TODO: enable Stop
 					}
+					currTaskStartTime = Calendar.getInstance();
+					btnStop.setEnabled(true);
 					break;
 				}
 			}
@@ -119,8 +124,11 @@ public class TaskMainPart {
 			public void handleEvent(Event e) {
 				switch (e.type) {
 				case SWT.Selection:
-					// System.out.println("Button pressed");
+					// System.out.println("Stop Button pressed");
 					stopTask();
+					if(btnStop.isEnabled()){
+						btnStop.setEnabled(false);
+					}
 					resetAll();
 					break;
 				}
@@ -135,6 +143,15 @@ public class TaskMainPart {
 	protected void stopTask() {
 		// TODO get end time
 		// TODO write data
+		Task e = TimetrackerFactory.eINSTANCE.createTask();
+		e.setDescription(txtArm.getText());
+		e.setTask(comboTasks.getText());
+		e.setStartTime(currTaskStartTime.getTime());
+		e.setEndsTime(Calendar.getInstance().getTime());
+		
+		user.getTasks().add(e);
+		
+		
 	}
 
 	protected boolean validateStart() {
