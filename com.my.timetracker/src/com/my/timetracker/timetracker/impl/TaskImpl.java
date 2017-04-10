@@ -25,6 +25,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link com.my.timetracker.timetracker.impl.TaskImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link com.my.timetracker.timetracker.impl.TaskImpl#getStartTime <em>Start Time</em>}</li>
  *   <li>{@link com.my.timetracker.timetracker.impl.TaskImpl#getEndsTime <em>Ends Time</em>}</li>
+ *   <li>{@link com.my.timetracker.timetracker.impl.TaskImpl#getTask <em>Task</em>}</li>
+ *   <li>{@link com.my.timetracker.timetracker.impl.TaskImpl#getEstimatedTime <em>Estimated Time</em>}</li>
  * </ul>
  *
  * @generated
@@ -89,6 +91,46 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task {
 	 * @ordered
 	 */
 	protected Date endsTime = ENDS_TIME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTask() <em>Task</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTask()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TASK_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getTask() <em>Task</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTask()
+	 * @generated
+	 * @ordered
+	 */
+	protected String task = TASK_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getEstimatedTime() <em>Estimated Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEstimatedTime()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ESTIMATED_TIME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getEstimatedTime() <em>Estimated Time</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEstimatedTime()
+	 * @generated
+	 * @ordered
+	 */
+	protected String estimatedTime = ESTIMATED_TIME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,6 +219,48 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getTask() {
+		return task;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTask(String newTask) {
+		String oldTask = task;
+		task = newTask;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimetrackerPackage.TASK__TASK, oldTask, task));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getEstimatedTime() {
+		return estimatedTime;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEstimatedTime(String newEstimatedTime) {
+		String oldEstimatedTime = estimatedTime;
+		estimatedTime = newEstimatedTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimetrackerPackage.TASK__ESTIMATED_TIME, oldEstimatedTime, estimatedTime));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -186,6 +270,10 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task {
 				return getStartTime();
 			case TimetrackerPackage.TASK__ENDS_TIME:
 				return getEndsTime();
+			case TimetrackerPackage.TASK__TASK:
+				return getTask();
+			case TimetrackerPackage.TASK__ESTIMATED_TIME:
+				return getEstimatedTime();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -206,6 +294,12 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task {
 				return;
 			case TimetrackerPackage.TASK__ENDS_TIME:
 				setEndsTime((Date)newValue);
+				return;
+			case TimetrackerPackage.TASK__TASK:
+				setTask((String)newValue);
+				return;
+			case TimetrackerPackage.TASK__ESTIMATED_TIME:
+				setEstimatedTime((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -228,6 +322,12 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task {
 			case TimetrackerPackage.TASK__ENDS_TIME:
 				setEndsTime(ENDS_TIME_EDEFAULT);
 				return;
+			case TimetrackerPackage.TASK__TASK:
+				setTask(TASK_EDEFAULT);
+				return;
+			case TimetrackerPackage.TASK__ESTIMATED_TIME:
+				setEstimatedTime(ESTIMATED_TIME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -246,6 +346,10 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task {
 				return START_TIME_EDEFAULT == null ? startTime != null : !START_TIME_EDEFAULT.equals(startTime);
 			case TimetrackerPackage.TASK__ENDS_TIME:
 				return ENDS_TIME_EDEFAULT == null ? endsTime != null : !ENDS_TIME_EDEFAULT.equals(endsTime);
+			case TimetrackerPackage.TASK__TASK:
+				return TASK_EDEFAULT == null ? task != null : !TASK_EDEFAULT.equals(task);
+			case TimetrackerPackage.TASK__ESTIMATED_TIME:
+				return ESTIMATED_TIME_EDEFAULT == null ? estimatedTime != null : !ESTIMATED_TIME_EDEFAULT.equals(estimatedTime);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -266,6 +370,10 @@ public class TaskImpl extends MinimalEObjectImpl.Container implements Task {
 		result.append(startTime);
 		result.append(", endsTime: ");
 		result.append(endsTime);
+		result.append(", task: ");
+		result.append(task);
+		result.append(", estimatedTime: ");
+		result.append(estimatedTime);
 		result.append(')');
 		return result.toString();
 	}

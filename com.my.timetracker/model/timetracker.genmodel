@@ -14,6 +14,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timetracker.ecore#//Task/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timetracker.ecore#//Task/startTime"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timetracker.ecore#//Task/endsTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timetracker.ecore#//Task/task"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute timetracker.ecore#//Task/estimatedTime"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

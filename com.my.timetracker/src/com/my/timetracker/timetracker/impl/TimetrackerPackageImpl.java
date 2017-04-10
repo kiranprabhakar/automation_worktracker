@@ -155,6 +155,24 @@ public class TimetrackerPackageImpl extends EPackageImpl implements TimetrackerP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getTask_Task() {
+		return (EAttribute)taskEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTask_EstimatedTime() {
+		return (EAttribute)taskEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public TimetrackerFactory getTimetrackerFactory() {
 		return (TimetrackerFactory)getEFactoryInstance();
 	}
@@ -185,6 +203,8 @@ public class TimetrackerPackageImpl extends EPackageImpl implements TimetrackerP
 		createEAttribute(taskEClass, TASK__DESCRIPTION);
 		createEAttribute(taskEClass, TASK__START_TIME);
 		createEAttribute(taskEClass, TASK__ENDS_TIME);
+		createEAttribute(taskEClass, TASK__TASK);
+		createEAttribute(taskEClass, TASK__ESTIMATED_TIME);
 	}
 
 	/**
@@ -224,6 +244,8 @@ public class TimetrackerPackageImpl extends EPackageImpl implements TimetrackerP
 		initEAttribute(getTask_Description(), ecorePackage.getEString(), "description", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTask_StartTime(), ecorePackage.getEDate(), "startTime", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTask_EndsTime(), ecorePackage.getEDate(), "endsTime", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTask_Task(), ecorePackage.getEString(), "task", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTask_EstimatedTime(), ecorePackage.getEString(), "estimatedTime", null, 0, 1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

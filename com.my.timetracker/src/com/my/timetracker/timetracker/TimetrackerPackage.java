@@ -131,13 +131,31 @@ public interface TimetrackerPackage extends EPackage {
 	int TASK__ENDS_TIME = 2;
 
 	/**
+	 * The feature id for the '<em><b>Task</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__TASK = 3;
+
+	/**
+	 * The feature id for the '<em><b>Estimated Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__ESTIMATED_TIME = 4;
+
+	/**
 	 * The number of structural features of the '<em>Task</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TASK_FEATURE_COUNT = 3;
+	int TASK_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Task</em>' class.
@@ -214,6 +232,28 @@ public interface TimetrackerPackage extends EPackage {
 	EAttribute getTask_EndsTime();
 
 	/**
+	 * Returns the meta object for the attribute '{@link com.my.timetracker.timetracker.Task#getTask <em>Task</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Task</em>'.
+	 * @see com.my.timetracker.timetracker.Task#getTask()
+	 * @see #getTask()
+	 * @generated
+	 */
+	EAttribute getTask_Task();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.my.timetracker.timetracker.Task#getEstimatedTime <em>Estimated Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Estimated Time</em>'.
+	 * @see com.my.timetracker.timetracker.Task#getEstimatedTime()
+	 * @see #getTask()
+	 * @generated
+	 */
+	EAttribute getTask_EstimatedTime();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -287,6 +327,22 @@ public interface TimetrackerPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TASK__ENDS_TIME = eINSTANCE.getTask_EndsTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Task</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TASK__TASK = eINSTANCE.getTask_Task();
+
+		/**
+		 * The meta object literal for the '<em><b>Estimated Time</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TASK__ESTIMATED_TIME = eINSTANCE.getTask_EstimatedTime();
 
 	}
 
