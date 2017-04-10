@@ -168,7 +168,7 @@ public class TaskMainPart {
 	@Persist
 	public void save() {
 		// Add task data
-		writer.writeToFile(user, "//test.xlsx");
+		writer.writeToFile(user, "c:\\temp\\test.xlsx");
 		// tableViewer.setInput(getData());
 
 		// Reset dirty state
